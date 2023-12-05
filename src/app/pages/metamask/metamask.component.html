@@ -1,0 +1,43 @@
+<div class="mt-2" *ngIf="web3Enabled">
+  <!-- Wallet Connect -->
+  <div class="d-flex justify-content-center" *ngIf="!walletConnected">
+    <button class="btn btn-sm btn-primary" type="button" (click)="connectToWallet()">Connect to wallet via MetaMask</button>
+  </div>
+  <!-- Wallet Connect -->
+  
+  <ng-container *ngIf="walletConnected">
+    <!-- Account Info -->
+    <div class="d-flex justify-content-between">
+
+      <!-- Account Id -->
+      <div>
+        <div class="d-flex flex-column">
+          <div>Account Id: </div>
+          <div>
+            <span class="fw-bold">{{account.id}}</span>
+          </div>
+        </div>
+      </div>
+      <!-- / Account Id -->
+  
+      <!-- Account Balance -->
+      <div>
+        <div class="d-flex flex-column">
+          <div>Balance: </div>
+          <div>
+            <span class="fw-bold">{{account.balance}} {{account.currency}}</span>
+          </div>
+        </div>
+      </div>
+      <!-- / Account Balance -->
+
+    </div>
+    <!-- / Account Info -->
+
+    <!-- Vote -->
+    <app-vote [account]="account.id"></app-vote>
+    <!-- / Vote -->
+  </ng-container>
+</div>
+
+<router-outlet></router-outlet>

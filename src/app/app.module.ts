@@ -5,9 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import {
+  NavbarComponent, 
+  Web3ConnectionComponent, 
+  ContractInformationComponent,
+  VoteComponent
+} from './components';
+
+import { EthereumComponent } from './pages';
+import { MetamaskComponent } from './pages/metamask/metamask.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    Web3ConnectionComponent,
+    ContractInformationComponent,
+    VoteComponent,
+    EthereumComponent,
+    MetamaskComponent
   ],
   imports: [
     BrowserModule,

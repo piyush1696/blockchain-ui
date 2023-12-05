@@ -1,0 +1,9 @@
+<!-- Check for MetaMask connection -->
+<p class="my-2" *ngIf="!web3Enabled">
+  <ngb-alert [dismissible]="false">
+    Your browser is not having any blockchain wallet. <br/>
+    You can install <a href="https://support.metamask.io/hc/en-us/articles/360015489531-Getting-started-with-MetaMask" alt="Metamask Support Page" target="_blank">MetaMask</a> wallet.
+  </ngb-alert>
+</p>
+
+<router-outlet></router-outlet>
